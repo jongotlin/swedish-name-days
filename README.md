@@ -3,7 +3,9 @@
 Install with composer `require jongotlin/swedish-name-days`.
 
 ```php
-echo $nameDay->getNamesByDate(new \DateTime('2018-08-21'))[0]; 
+use JGI\NameDay\NameDay;
+...
+echo (new NameDay())->getNamesByDate(new \DateTime('2018-08-21'))[0]; 
 // Jon
 
 ```
