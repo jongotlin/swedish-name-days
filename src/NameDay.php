@@ -400,6 +400,30 @@ class NameDay
         ],
     ];
 
+    private $newNames = [
+        2022 => [
+            1 => [
+                19 => ['Henry'],
+            ],
+            2 => [
+                28 => ['Maja'],
+            ],
+            3 => [
+                12 => ['Regina'],
+                31 => ['Noa'],
+            ],
+            7 => [
+                28 => ['Olle'],
+            ],
+            11 => [
+                2 => ['Tim'],
+            ],
+            12 => [
+                3 => ['Cornelia'],
+            ],
+        ],
+    ];
+
     /**
      * @param \DateTimeInterface $date
      *
@@ -407,6 +431,19 @@ class NameDay
      */
     public function getNamesByDate(\DateTimeInterface $date): array
     {
-        return $this->names[(int)$date->format('n')][(int)$date->format('j')];
+        $baseNames = $this->names[(int)$date->format('n')][(int)$date->format('j')];
+
+        if ((int)$date->format('Y') < 2022) {
+            return $baseNames;
+        }
+        $newNames = [];
+        foreach (range(2022, (int)$date->format('Y')) as $year) {
+            if (!empty($this->newNames[$year][(int)$date->format('n')][(int)$date->format('j')])) {
+                $newNames = $this->newNames[$year][(int)$date->format('n')][(int)$date->format('j')];
+            }
+        }
+
+
+        return array_merge($baseNames, $newNames);
     }
 }

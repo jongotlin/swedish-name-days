@@ -20,6 +20,9 @@ class NameDayTest extends TestCase
         return [
             ['2018-08-21', ['Jon', 'Jonna']],
             ['2018-09-09', ['Anita', 'Annette']],
+            ['2021-01-19', ['Henrik']],
+            ['2022-01-19', ['Henrik', 'Henry']],
+            ['2023-01-19', ['Henrik', 'Henry']],
         ];
     }
 }
