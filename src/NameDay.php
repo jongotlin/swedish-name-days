@@ -231,7 +231,7 @@ class NameDay
             26 => ['Jesper', 'Jasmine'],
             27 => ['Marta'],
             28 => ['Botvid', 'Seved'],
-            29 => ['Olof', 'Olle'],
+            29 => ['Olof'],
             30 => ['Algot'],
             31 => ['Helena', 'Elin'],
         ],
@@ -413,7 +413,7 @@ class NameDay
                 31 => ['Noa'],
             ],
             7 => [
-                28 => ['Olle'],
+                29 => ['Olle'],
             ],
             11 => [
                 2 => ['Tim'],
