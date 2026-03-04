@@ -14,4 +14,11 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <UnusedClass>
+            <errorLevel type="suppress">
+                <file name="src/NameDay.php" />
+            </errorLevel>
+        </UnusedClass>
+    </issueHandlers>
 </psalm>
