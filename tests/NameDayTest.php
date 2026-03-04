@@ -1,21 +1,19 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
 use JGI\NameDay\NameDay;
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class NameDayTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider namesProvider
-     */
-    public function returnCorrectNames(string $date, array $names): void
+    #[DataProvider('namesProvider')]
+    public function testReturnCorrectNames(string $date, array $names): void
     {
         $nameDay = new NameDay();
-        $this->assertEquals($names, $nameDay->getNamesByDate(new \DateTime($date)));
+        self::assertEquals($names, $nameDay->getNamesByDate(new \DateTime($date)));
     }
 
-    public function namesProvider(): array
+    public static function namesProvider(): array
     {
         return [
             ['2018-08-21', ['Jon', 'Jonna']],
@@ -23,6 +21,8 @@ class NameDayTest extends TestCase
             ['2021-01-19', ['Henrik']],
             ['2022-01-19', ['Henrik', 'Henry']],
             ['2023-01-19', ['Henrik', 'Henry']],
+            ['2026-01-24', ['Erika']],
+            ['2027-01-24', ['Erika', 'Eira']],
         ];
     }
 }

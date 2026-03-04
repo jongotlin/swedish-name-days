@@ -422,11 +422,27 @@ class NameDay
                 3 => ['Cornelia'],
             ],
         ],
+        2027 => [
+            1 => [
+                24 => ['Eira'],
+            ],
+            6 => [
+                5 => ['Mio'],
+            ],
+            7 => [
+                30 => ['Vilgot'],
+            ],
+            10 => [
+                20 => ['Cassandra'],
+                29 => ['Flora'],
+            ],
+            12 => [
+                19 => ['Zackarias'],
+            ],
+        ]
     ];
 
     /**
-     * @param \DateTimeInterface $date
-     *
      * @return string[]
      */
     public function getNamesByDate(\DateTimeInterface $date): array
