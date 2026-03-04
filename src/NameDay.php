@@ -422,24 +422,40 @@ class NameDay
                 3 => ['Cornelia'],
             ],
         ],
+        2027 => [
+            1 => [
+                24 => ['Eira'],
+            ],
+            6 => [
+                5 => ['Mio'],
+            ],
+            7 => [
+                30 => ['Vilgot'],
+            ],
+            10 => [
+                20 => ['Cassandra'],
+                29 => ['Flora'],
+            ],
+            12 => [
+                19 => ['Zackarias'],
+            ],
+        ],
     ];
 
     /**
-     * @param \DateTimeInterface $date
-     *
      * @return string[]
      */
     public function getNamesByDate(\DateTimeInterface $date): array
     {
-        $baseNames = $this->names[(int)$date->format('n')][(int)$date->format('j')];
+        $baseNames = $this->names[(int) $date->format('n')][(int) $date->format('j')];
 
-        if ((int)$date->format('Y') < 2022) {
+        if ((int) $date->format('Y') < 2022) {
             return $baseNames;
         }
         $newNames = [];
-        foreach (range(2022, (int)$date->format('Y')) as $year) {
-            if (!empty($this->newNames[$year][(int)$date->format('n')][(int)$date->format('j')])) {
-                $newNames = $this->newNames[$year][(int)$date->format('n')][(int)$date->format('j')];
+        foreach (range(2022, (int) $date->format('Y')) as $year) {
+            if (!empty($this->newNames[$year][(int) $date->format('n')][(int) $date->format('j')])) {
+                $newNames = $this->newNames[$year][(int) $date->format('n')][(int) $date->format('j')];
             }
         }
 
